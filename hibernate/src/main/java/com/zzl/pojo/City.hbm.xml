@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2018-8-7 9:56:31 by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="com.zzl.pojo.City" table="CITY">
+        <id name="cid" type="int">
+            <column name="CID" />
+            <generator class="assigned" />
+        </id>
+        <property name="cname" type="java.lang.String">
+            <column name="CNAME" />
+        </property>
+        <property name="pid" type="int">
+            <column name="PID" />
+        </property>
+        <many-to-one name="province" class="com.zzl.pojo.Province" fetch="join">
+            <column name="PROVINCE" />
+        </many-to-one>
+    </class>
+</hibernate-mapping>
